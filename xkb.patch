@@ -1,7 +1,7 @@
 diff -ru a/rules/base.lst b/rules/base.lst
---- a/rules/base.lst	2010-07-20 14:35:27.000000000 +0900
-+++ b/rules/base.lst	2010-12-05 19:41:05.815049622 +0900
-@@ -468,6 +468,8 @@
+--- a/rules/base.lst	2011-01-15 06:42:06.000000000 +0900
++++ b/rules/base.lst	2011-01-15 06:45:15.683293829 +0900
+@@ -474,6 +474,8 @@
    kana            jp: Kana
    OADG109A        jp: OADG 109A
    mac             jp: Macintosh
@@ -11,9 +11,9 @@ diff -ru a/rules/base.lst b/rules/base.lst
    ruskaz          kz: Russian with Kazakh
    kazrus          kz: Kazakh with Russian
 diff -ru a/rules/base.xml b/rules/base.xml
---- a/rules/base.xml	2010-07-20 14:35:27.000000000 +0900
-+++ b/rules/base.xml	2010-12-05 19:47:43.497044118 +0900
-@@ -2914,6 +2914,22 @@
+--- a/rules/base.xml	2011-01-15 06:42:06.000000000 +0900
++++ b/rules/base.xml	2011-01-15 06:45:15.685294193 +0900
+@@ -2957,6 +2957,22 @@
              <description>Macintosh</description>
            </configItem>
          </variant>
@@ -36,7 +36,7 @@ diff -ru a/rules/base.xml b/rules/base.xml
        </variantList>
      </layout>
      <layout>
-@@ -5481,4 +5497,4 @@
+@@ -5543,4 +5559,4 @@
        </option>
      </group>
    </optionList>
@@ -44,9 +44,9 @@ diff -ru a/rules/base.xml b/rules/base.xml
 \ No newline at end of file
 +</xkbConfigRegistry>
 diff -ru a/rules/evdev.lst b/rules/evdev.lst
---- a/rules/evdev.lst	2010-07-20 14:35:27.000000000 +0900
-+++ b/rules/evdev.lst	2010-12-05 21:01:06.690594299 +0900
-@@ -468,6 +468,8 @@
+--- a/rules/evdev.lst	2011-01-15 06:42:06.000000000 +0900
++++ b/rules/evdev.lst	2011-01-15 06:45:15.685294193 +0900
+@@ -474,6 +474,8 @@
    kana            jp: Kana
    OADG109A        jp: OADG 109A
    mac             jp: Macintosh
@@ -56,9 +56,9 @@ diff -ru a/rules/evdev.lst b/rules/evdev.lst
    ruskaz          kz: Russian with Kazakh
    kazrus          kz: Kazakh with Russian
 diff -ru a/rules/evdev.xml b/rules/evdev.xml
---- a/rules/evdev.xml	2010-07-20 14:35:27.000000000 +0900
-+++ b/rules/evdev.xml	2010-12-05 21:01:37.033009669 +0900
-@@ -2914,6 +2914,22 @@
+--- a/rules/evdev.xml	2011-01-15 06:42:06.000000000 +0900
++++ b/rules/evdev.xml	2011-01-15 06:45:15.687294556 +0900
+@@ -2957,6 +2957,22 @@
              <description>Macintosh</description>
            </configItem>
          </variant>
@@ -81,7 +81,7 @@ diff -ru a/rules/evdev.xml b/rules/evdev.xml
        </variantList>
      </layout>
      <layout>
-@@ -5481,4 +5497,4 @@
+@@ -5543,4 +5559,4 @@
        </option>
      </group>
    </optionList>
@@ -89,8 +89,8 @@ diff -ru a/rules/evdev.xml b/rules/evdev.xml
 \ No newline at end of file
 +</xkbConfigRegistry>
 diff -ru a/symbols/jp b/symbols/jp
---- a/symbols/jp	2010-07-20 14:35:27.000000000 +0900
-+++ b/symbols/jp	2010-12-05 19:48:11.424395018 +0900
+--- a/symbols/jp	2011-01-15 06:42:06.000000000 +0900
++++ b/symbols/jp	2011-01-15 06:45:15.687294556 +0900
 @@ -220,3 +220,191 @@
  
      replace key <CAPS> { [ Caps_Lock ] };
