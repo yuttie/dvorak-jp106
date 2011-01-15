@@ -91,7 +91,7 @@ diff -ru a/rules/evdev.xml b/rules/evdev.xml
 diff -ru a/symbols/jp b/symbols/jp
 --- a/symbols/jp	2011-01-15 06:42:06.000000000 +0900
 +++ b/symbols/jp	2011-01-15 06:45:15.687294556 +0900
-@@ -220,3 +220,191 @@
+@@ -220,3 +220,183 @@
  
      replace key <CAPS> { [ Caps_Lock ] };
  };
@@ -102,16 +102,7 @@ diff -ru a/symbols/jp b/symbols/jp
 +// (http://www.vultaire.net/software/dvorak_jp106/index.php)
 +partial alphanumeric_keys
 +xkb_symbols "dvorak" {
-+    include "jp(common_dv)"
 +    name[Group1]= "Japan - Dvorak JP106 v0.2";
-+
-+    key <AE13> { [ backslash, bar 	] };
-+};
-+
-+// common latin part of jp keyboard map
-+partial hidden alphanumeric_keys
-+xkb_symbols "common_dv" {
-+    // "Common" keys for jp 106/109A dvorak layout
 +
 +    // Alphanumeric section
 +    key <HZTG> {
@@ -131,6 +122,7 @@ diff -ru a/symbols/jp b/symbols/jp
 +    key <AE10> { [ 0, parenright		] };
 +    key <AE11> { [ bracketleft, braceleft	] };
 +    key <AE12> { [ bracketright, braceright	] };
++    key <AE13> { [ backslash, bar 		] };
 +
 +    key <AD01> { [ apostrophe, quotedbl		] };
 +    key <AD02> { [ comma, less			] };
