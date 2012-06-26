@@ -1,120 +1,12 @@
-diff -ru a/rules/base.lst b/rules/base.lst
---- a/rules/base.lst	2011-01-15 06:42:06.000000000 +0900
-+++ b/rules/base.lst	2011-01-15 06:45:15.683293829 +0900
-@@ -474,6 +474,8 @@
-   kana            jp: Kana
-   OADG109A        jp: OADG 109A
-   mac             jp: Macintosh
-+  dvorak          jp: Dvorak JP106 v0.2
-+  kana_dv         jp: Dvorak JP106 v0.2 Kana
-   phonetic        kg: Phonetic
-   ruskaz          kz: Russian with Kazakh
-   kazrus          kz: Kazakh with Russian
-diff -ru a/rules/base.xml b/rules/base.xml
---- a/rules/base.xml	2011-01-15 06:42:06.000000000 +0900
-+++ b/rules/base.xml	2011-01-15 06:45:15.685294193 +0900
-@@ -2957,6 +2957,22 @@
-             <description>Macintosh</description>
-           </configItem>
-         </variant>
-+        <!-- Dvorak layout for JP106
-+             This is based on Dvorak JP106
-+             (http://www.vultaire.net/software/dvorak_jp106/index.php)
-+        -->
-+        <variant>
-+          <configItem>
-+            <name>dvorak</name>
-+            <description>Dvorak JP106 v0.2</description>
-+          </configItem>
-+        </variant>
-+        <variant>
-+          <configItem>
-+            <name>kana_dv</name>
-+            <description>Dvorak JP106 v0.2 Kana</description>
-+          </configItem>
-+        </variant>
-       </variantList>
-     </layout>
-     <layout>
-@@ -5543,4 +5559,4 @@
-       </option>
-     </group>
-   </optionList>
--</xkbConfigRegistry>
-\ No newline at end of file
-+</xkbConfigRegistry>
-diff -ru a/rules/evdev.lst b/rules/evdev.lst
---- a/rules/evdev.lst	2011-01-15 06:42:06.000000000 +0900
-+++ b/rules/evdev.lst	2011-01-15 06:45:15.685294193 +0900
-@@ -474,6 +474,8 @@
-   kana            jp: Kana
-   OADG109A        jp: OADG 109A
-   mac             jp: Macintosh
-+  dvorak          jp: Dvorak JP106 v0.2
-+  kana_dv         jp: Dvorak JP106 v0.2 Kana
-   phonetic        kg: Phonetic
-   ruskaz          kz: Russian with Kazakh
-   kazrus          kz: Kazakh with Russian
-diff -ru a/rules/evdev.xml b/rules/evdev.xml
---- a/rules/evdev.xml	2011-01-15 06:42:06.000000000 +0900
-+++ b/rules/evdev.xml	2011-01-15 06:45:15.687294556 +0900
-@@ -2957,6 +2957,22 @@
-             <description>Macintosh</description>
-           </configItem>
-         </variant>
-+        <!-- Dvorak layout for JP106
-+             This is based on Dvorak JP106
-+             (http://www.vultaire.net/software/dvorak_jp106/index.php)
-+        -->
-+        <variant>
-+          <configItem>
-+            <name>dvorak</name>
-+            <description>Dvorak JP106 v0.2</description>
-+          </configItem>
-+        </variant>
-+        <variant>
-+          <configItem>
-+            <name>kana_dv</name>
-+            <description>Dvorak JP106 v0.2 Kana</description>
-+          </configItem>
-+        </variant>
-       </variantList>
-     </layout>
-     <layout>
-@@ -5543,4 +5559,4 @@
-       </option>
-     </group>
-   </optionList>
--</xkbConfigRegistry>
-\ No newline at end of file
-+</xkbConfigRegistry>
 diff -ru a/symbols/jp b/symbols/jp
---- a/symbols/jp	2011-01-15 06:42:06.000000000 +0900
-+++ b/symbols/jp	2011-01-15 06:45:15.687294556 +0900
-@@ -220,3 +220,183 @@
+--- a/symbols/jp	2012-06-27 00:06:57.000000000 +0900
++++ b/symbols/jp	2012-06-27 01:04:07.973383469 +0900
+@@ -257,9 +257,16 @@
+     name[Group1]	= "Japanese (Dvorak)";
+     include "jp(OADG109A)"
  
-     replace key <CAPS> { [ Caps_Lock ] };
- };
-+
-+// Dvorak layout for JP106
-+// 
-+// This is based on Dvorak JP106
-+// (http://www.vultaire.net/software/dvorak_jp106/index.php)
-+partial alphanumeric_keys
-+xkb_symbols "dvorak" {
-+    name[Group1]= "Japan - Dvorak JP106 v0.2";
-+
-+    // Alphanumeric section
-+    key <HZTG> {
-+	type[Group1]="PC_ALT_LEVEL2",
-+	symbols[Group1]= [ Zenkaku_Hankaku, Kanji ]
-+    };
-+
-+    key <AE01> { [ 1, exclam			] };
+-    key <AE11> { [ at, grave		] };
 +    key <AE02> { [ 2, at			] };
-+    key <AE03> { [ 3, numbersign		] };
-+    key <AE04> { [ 4, dollar			] };
-+    key <AE05> { [ 5, percent			] };
 +    key <AE06> { [ 6, asciicircum		] };
 +    key <AE07> { [ 7, ampersand			] };
 +    key <AE08> { [ 8, asterisk			] };
@@ -122,156 +14,36 @@ diff -ru a/symbols/jp b/symbols/jp
 +    key <AE10> { [ 0, parenright		] };
 +    key <AE11> { [ bracketleft, braceleft	] };
 +    key <AE12> { [ bracketright, braceright	] };
-+    key <AE13> { [ backslash, bar 		] };
-+
-+    key <AD01> { [ apostrophe, quotedbl		] };
-+    key <AD02> { [ comma, less			] };
-+    key <AD03> { [ period, greater		] };
-+    key <AD04> { [ p, P				] };
-+    key <AD05> { [ y, Y				] };
-+    key <AD06> { [ f, F				] };
-+    key <AD07> { [ g, G				] };
-+    key <AD08> { [ c, C				] };
-+    key <AD09> { [ r, R				] };
-+    key <AD10> { [ l, L				] };
-+    key <AD11> { [ slash, question		] };
-+    key <AD12> { [ equal, plus			] };
-+
-+    key <CAPS> { [ Eisu_toggle, Caps_Lock	] };
-+
-+    key <AC01> { [ a, A				] };
-+    key <AC02> { [ o, O				] };
-+    key <AC03> { [ e, E				] };
-+    key <AC04> { [ u, U				] };
-+    key <AC05> { [ i, I				] };
-+    key <AC06> { [ d, D				] };
-+    key <AC07> { [ h, H				] };
-+    key <AC08> { [ t, T				] };
-+    key <AC09> { [ n, N				] };
-+    key <AC10> { [ s, S				] };
-+    key <AC11> { [ minus, underscore		] };
-+    key <AC12> { [ grave, asciitilde		] };
-+
-+    key <AB01> { [ semicolon, colon		] };
-+    key <AB02> { [ q, Q				] };
-+    key <AB03> { [ j, J				] };
-+    key <AB04> { [ k, K				] };
-+    key <AB05> { [ x, X				] };
-+    key <AB06> { [ b, B				] };
-+    key <AB07> { [ m, M				] };
-+    key <AB08> { [ w, W				] };
-+    key <AB09> { [ v, V				] };
-+    key <AB10> { [ z, Z				] };
-+    key <AB11> { [ backslash, bar		] };
-+    key <LCTL> { [ Control_L			] };
-+
-+    key <NFER> { [ Muhenkan			] };
-+
-+    key <XFER> {
-+	type[Group1]="PC_ALT_LEVEL2",
-+	symbols[Group1]= [ Henkan, Mode_switch ]
-+    };
-+    key <HKTG> {
-+	type[Group1]="PC_ALT_LEVEL2",
-+	symbols[Group1]= [ Hiragana_Katakana, Romaji ]
-+    };
-+
-+    key <EISU> {
-+       type[Group1]="PC_ALT_LEVEL2",
-+       symbols[Group1]= [ Eisu_toggle ]
-+    };
-+
-+    key <KANA> {
-+       type[Group1]="PC_ALT_LEVEL2",
-+       symbols[Group1]= [ Hiragana_Katakana ]
-+    };
-+
-+
-+    key <PRSC> {
-+        type[Group1]= "PC_ALT_LEVEL2",
-+        symbols[Group1]= [ Print, Execute ]
-+    };
-+};
-+
-+partial alphanumeric_keys
-+xkb_symbols "kana_dv" {
-+
-+    name[Group1]= "Japan - Dvorak JP106 v0.2 Kana";
-+
-+    // Alphanumeric section
-+    key <HZTG> {
-+	type[Group1]="PC_ALT_LEVEL2",
-+	symbols[Group1]= [ Zenkaku_Hankaku, Kanji ]
-+    };
-+    key <AE01> { [ kana_NU		]	};
-+    key <AE02> { [ kana_FU		]	};
-+    key <AE03> { [ kana_A, kana_a	]	};
-+    key <AE04> { [ kana_U, kana_u	]	};
-+    key <AE05> { [ kana_E, kana_e	]	};
-+    key <AE06> { [ kana_O, kana_o	]	};
-+    key <AE07> { [ kana_YA, kana_ya	]	};
-+    key <AE08> { [ kana_YU, kana_yu	]	};
-+    key <AE09> { [ kana_YO, kana_yo	]	};
-+    key <AE10> { [ kana_WA, kana_WO	]	};
-+    key <AE11> { [ voicedsound		]	};
-+    key <AE12> { [ kana_HE		]	};
-+    key <AE13> { [ prolongedsound	]	};
-+
-+    key <AD01> { [ kana_KE		]	};
-+    key <AD02> { [ kana_NE, kana_comma	]	};
-+    key <AD03> { [ kana_RU, kana_fullstop ]	};
-+    key <AD04> { [ kana_SE		]	};
-+    key <AD05> { [ kana_N		]	};
-+    key <AD06> { [ kana_HA		]	};
-+    key <AD07> { [ kana_KI		]	};
-+    key <AD08> { [ kana_SO		]	};
-+    key <AD09> { [ kana_SU		]	};
-+    key <AD10> { [ kana_RI		]	};
-+    key <AD11> { [ kana_ME, kana_middledot]	};
-+    key <AD12> { [ semivoicedsound, kana_openingbracket	] };
-+
-+    key <CAPS> { [ Eisu_toggle, Caps_Lock ]	};
-+    key <AC01> { [ kana_CHI		]	};
-+    key <AC02> { [ kana_RA		]	};
-+    key <AC03> { [ kana_I, kana_i	]	};
-+    key <AC04> { [ kana_NA		]	};
-+    key <AC05> { [ kana_NI		]	};
-+    key <AC06> { [ kana_SHI		]	};
-+    key <AC07> { [ kana_KU		]	};
-+    key <AC08> { [ kana_KA		]	};
-+    key <AC09> { [ kana_MI		]	};
-+    key <AC10> { [ kana_TO		]	};
-+    key <AC11> { [ kana_HO		]	};
-+    key <AC12> { [ kana_MU, kana_closingbracket ] };
-+
-+    key <AB01> { [ kana_RE		]	};
-+    key <AB02> { [ kana_TA		]	};
-+    key <AB03> { [ kana_MA		]	};
-+    key <AB04> { [ kana_NO		]	};
-+    key <AB05> { [ kana_SA		]	};
-+    key <AB06> { [ kana_KO		]	};
-+    key <AB07> { [ kana_MO		]	};
-+    key <AB08> { [ kana_TE		]	};
-+    key <AB09> { [ kana_HI		]	};
-+    key <AB10> { [ kana_TSU, kana_tsu	]	};
-+    key <AB11> { [ kana_RO		]	};
-+    key <LCTL> { [ Control_L		]	};
-+
-+    key <NFER> { [ Muhenkan		]	};
-+
-+    key <XFER> {
-+	type[Group1]="PC_ALT_LEVEL2",
-+	symbols[Group1]= [ Henkan, Mode_switch ]
-+    };
-+    key <HKTG> {
-+	type[Group1]="PC_ALT_LEVEL2",
-+	symbols[Group1]= [ Hiragana_Katakana, Romaji ]
-+    };
-+
-+    // End alphanumeric section
-+
-+    key <PRSC> {
-+        type[Group1]= "PC_ALT_LEVEL2",
-+        symbols[Group1]= [ Print, Execute ]
-+    };
-+};
+ 
+-    key <AD01> { [ colon, asterisk	] };
++    key <AD01> { [ apostrophe, quotedbl	] };
+     key <AD02> { [ comma,  less		] };
+     key <AD03> { [ period, greater	] };
+     key <AD04> { [ p, P			] };
+@@ -270,6 +277,7 @@
+     key <AD09> { [ r, R			] };
+     key <AD10> { [ l, L			] };
+     key <AD11> { [ slash, question	] };
++    key <AD12> { [ equal, plus		] };
+ 
+     key <AC02> { [ o, O			] };
+     key <AC03> { [ e, E			] };
+@@ -280,9 +288,10 @@
+     key <AC08> { [ t, T			] };
+     key <AC09> { [ n, N			] };
+     key <AC10> { [ s, S			] };
+-    key <AC11> { [ minus, equal		] };
++    key <AC11> { [ minus, underscore	] };
++    key <AC12> { [ grave, asciitilde	] };
+ 
+-    key <AB01> { [ semicolon, plus	] };
++    key <AB01> { [ semicolon, colon	] };
+     key <AB02> { [ q, Q			] };
+     key <AB03> { [ j, J			] };
+     key <AB04> { [ k, K			] };
+@@ -291,4 +300,5 @@
+     key <AB08> { [ w, W			] };
+     key <AB09> { [ v, V			] };
+     key <AB10> { [ z, Z			] };
++    key <AB11> { [ backslash, bar	] };
+ };
