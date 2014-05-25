@@ -1,8 +1,8 @@
 diff -ru a/symbols/jp b/symbols/jp
---- a/symbols/jp	2012-06-27 00:06:57.000000000 +0900
-+++ b/symbols/jp	2012-06-27 01:04:07.973383469 +0900
-@@ -257,9 +257,16 @@
-     name[Group1]	= "Japanese (Dvorak)";
+--- a/symbols/jp	2014-05-25 11:27:13.000000000 +0900
++++ b/symbols/jp	2014-05-25 12:05:47.433304266 +0900
+@@ -259,9 +259,16 @@
+     name[Group1]= "Japanese (Dvorak)";
      include "jp(OADG109A)"
  
 -    key <AE11> { [ at, grave		] };
@@ -17,10 +17,10 @@ diff -ru a/symbols/jp b/symbols/jp
  
 -    key <AD01> { [ colon, asterisk	] };
 +    key <AD01> { [ apostrophe, quotedbl	] };
-     key <AD02> { [ comma,  less		] };
+     key <AD02> { [ comma, less		] };
      key <AD03> { [ period, greater	] };
      key <AD04> { [ p, P			] };
-@@ -270,6 +277,7 @@
+@@ -272,6 +279,7 @@
      key <AD09> { [ r, R			] };
      key <AD10> { [ l, L			] };
      key <AD11> { [ slash, question	] };
@@ -28,22 +28,24 @@ diff -ru a/symbols/jp b/symbols/jp
  
      key <AC02> { [ o, O			] };
      key <AC03> { [ e, E			] };
-@@ -280,9 +288,10 @@
+@@ -282,9 +290,10 @@
      key <AC08> { [ t, T			] };
      key <AC09> { [ n, N			] };
      key <AC10> { [ s, S			] };
 -    key <AC11> { [ minus, equal		] };
 +    key <AC11> { [ minus, underscore	] };
-+    key <AC12> { [ grave, asciitilde	] };
++    key <AC12> { [ backslash, bar	] };
  
 -    key <AB01> { [ semicolon, plus	] };
 +    key <AB01> { [ semicolon, colon	] };
      key <AB02> { [ q, Q			] };
      key <AB03> { [ j, J			] };
      key <AB04> { [ k, K			] };
-@@ -291,4 +300,5 @@
+@@ -293,6 +302,7 @@
      key <AB08> { [ w, W			] };
      key <AB09> { [ v, V			] };
      key <AB10> { [ z, Z			] };
-+    key <AB11> { [ backslash, bar	] };
++    key <AB11> { [ grave, asciitilde	] };
  };
+ 
+ // EXTRAS:
