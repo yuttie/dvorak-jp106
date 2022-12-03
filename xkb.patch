@@ -1,31 +1,31 @@
 diff -ruN a/rules/evdev b/rules/evdev
---- a/rules/evdev	2017-05-08 22:38:09.921758599 +0900
-+++ b/rules/evdev	2017-05-09 09:49:02.029613719 +0900
-@@ -958,6 +958,7 @@
-   *			misc:typo 	= +typo(base):4
+--- a/rules/evdev	2022-12-03 10:38:52.675572392 +0900
++++ b/rules/evdev	2022-12-03 10:55:29.418971230 +0900
+@@ -815,6 +815,7 @@
+   *			misc:apl		= +apl(level3):4
  
- ! option	=	symbols
-+  mod:custom		=	+mod(custom)
-   grp:shift_toggle	=	+group(shifts_toggle)
-   altwin:menu		=	+altwin(menu)
-   altwin:meta_alt	=	+altwin(meta_alt)
+ ! option			= symbols
++  mod:custom			= +mod(custom)
+   grp:shift_caps_switch		= +group(caps_select)
+   grp:win_menu_switch		= +group(win_menu_select)
+   grp:lctrl_rctrl_switch	= +group(ctrl_select)
 diff -ruN a/rules/evdev.lst b/rules/evdev.lst
---- a/rules/evdev.lst	2017-05-08 22:38:09.921758599 +0900
-+++ b/rules/evdev.lst	2017-05-09 09:45:50.667465504 +0900
-@@ -689,6 +689,7 @@
-   gag             md: Moldavian (Gagauz)
+--- a/rules/evdev.lst	2022-12-03 10:38:52.555572787 +0900
++++ b/rules/evdev.lst	2022-12-03 10:56:36.552084216 +0900
+@@ -779,6 +779,7 @@
+   phonetic        my: Malay (Jawi, phonetic)
  
  ! option
-+  mod:cusnom           My customization
++  mod:custom           My customization
    grp                  Switching to another layout
    grp:switch           Right Alt (while pressed)
    grp:lswitch          Left Alt (while pressed)
 diff -ruN a/rules/evdev.xml b/rules/evdev.xml
---- a/rules/evdev.xml	2017-05-08 22:38:09.921758599 +0900
-+++ b/rules/evdev.xml	2017-05-09 09:46:41.918969537 +0900
-@@ -5654,6 +5654,10 @@
+--- a/rules/evdev.xml	2022-10-05 01:32:15.000000000 +0900
++++ b/rules/evdev.xml	2022-12-03 10:57:54.401826650 +0900
+@@ -6877,6 +6877,10 @@
      <group allowMultipleSelection="true">
-       
+       <!-- The key combination used to switch between groups -->
        <configItem>
 +        <name>mod:custom</name>
 +        <description>My customization</description>
@@ -34,16 +34,9 @@ diff -ruN a/rules/evdev.xml b/rules/evdev.xml
          <name>grp</name>
          <description>Switching to another layout</description>
        </configItem>
-@@ -6843,4 +6847,4 @@
-       </option>
-     </group>
-   </optionList>
--</xkbConfigRegistry>
-\ No newline at end of file
-+</xkbConfigRegistry>
 diff -ruN a/symbols/mod b/symbols/mod
 --- a/symbols/mod	1970-01-01 09:00:00.000000000 +0900
-+++ b/symbols/mod	2017-05-09 09:42:26.297443314 +0900
++++ b/symbols/mod	2022-12-03 10:58:37.671683490 +0900
 @@ -0,0 +1,28 @@
 +partial modifier_keys
 +xkb_symbols "custom" {
