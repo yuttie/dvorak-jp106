@@ -1,0 +1,13 @@
+--- rules/evdev.xml	2022-10-05 01:32:15.000000000 +0900
++++ rules/evdev.xml	2022-12-03 10:57:54.401826650 +0900
+@@ -6877,6 +6877,10 @@
+     <group allowMultipleSelection="true">
+       <!-- The key combination used to switch between groups -->
+       <configItem>
++        <name>mod:custom</name>
++        <description>My customization</description>
++      </configItem>
++      <configItem>
+         <name>grp</name>
+         <description>Switching to another layout</description>
+       </configItem>

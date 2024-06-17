@@ -1,0 +1,10 @@
+--- rules/evdev	2022-12-03 10:38:52.675572392 +0900
++++ rules/evdev	2022-12-03 10:55:29.418971230 +0900
+@@ -815,6 +815,7 @@
+   *			misc:apl		= +apl(level3):4
+ 
+ ! option			= symbols
++  mod:custom			= +mod(custom)
+   grp:shift_caps_switch		= +group(caps_select)
+   grp:win_menu_switch		= +group(win_menu_select)
+   grp:lctrl_rctrl_switch	= +group(ctrl_select)
