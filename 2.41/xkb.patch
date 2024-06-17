@@ -1,0 +1,68 @@
+diff -ruN a/rules/evdev b/rules/evdev
+--- a/rules/evdev	2024-02-05 23:14:49.000000000 +0900
++++ b/rules/evdev	2024-06-17 15:25:52.904289566 +0900
+@@ -724,6 +724,7 @@
+   *			grp:shifts_toggle	= +group(shifts_toggle):4
+ 
+ ! option			= symbols
++  mod:custom			= +mod(custom)
+   grp:shift_caps_switch		= +group(caps_select)
+   grp:win_menu_switch		= +group(win_menu_select)
+   grp:lctrl_rctrl_switch	= +group(ctrl_select)
+diff -ruN a/rules/evdev.lst b/rules/evdev.lst
+--- a/rules/evdev.lst	2024-02-05 23:14:49.000000000 +0900
++++ b/rules/evdev.lst	2024-06-17 15:25:52.904289566 +0900
+@@ -780,6 +780,7 @@
+   fr              vn: Vietnamese (France)
+ 
+ ! option
++  mod:custom           My customization
+   grp                  Switching to another layout
+   grp:switch           Right Alt (while pressed)
+   grp:lswitch          Left Alt (while pressed)
+diff -ruN a/rules/evdev.xml b/rules/evdev.xml
+--- a/rules/evdev.xml	2024-02-05 23:14:49.000000000 +0900
++++ b/rules/evdev.xml	2024-06-17 15:25:52.904289566 +0900
+@@ -6917,6 +6917,10 @@
+     <group allowMultipleSelection="true">
+       <!-- The key combination used to switch between groups -->
+       <configItem>
++        <name>mod:custom</name>
++        <description>My customization</description>
++      </configItem>
++      <configItem>
+         <name>grp</name>
+         <description>Switching to another layout</description>
+       </configItem>
+diff -ruN a/symbols/mod b/symbols/mod
+--- a/symbols/mod	1970-01-01 09:00:00.000000000 +0900
++++ b/symbols/mod	2022-12-15 16:35:02.781847570 +0900
+@@ -0,0 +1,28 @@
++partial modifier_keys
++xkb_symbols "custom" {
++    replace key <MUHE> { [ Super_L ] };
++    modifier_map Mod4 { <MUHE> };
++
++    replace key <HENK> { [ Alt_R ] };
++    modifier_map Mod1 { <HENK> };
++
++    replace key <AE02> { [ 2, at                        ] };
++    replace key <AE06> { [ 6, asciicircum               ] };
++    replace key <AE07> { [ 7, ampersand                 ] };
++    replace key <AE08> { [ 8, asterisk                  ] };
++    replace key <AE09> { [ 9, parenleft                 ] };
++    replace key <AE10> { [ 0, parenright                ] };
++    replace key <AE11> { [ bracketleft, braceleft       ] };
++    replace key <AE12> { [ bracketright, braceright     ] };
++
++    replace key <AD01> { [ apostrophe, quotedbl ] };
++
++    replace key <AD12> { [ equal, plus          ] };
++
++    replace key <AC11> { [ minus, underscore    ] };
++    replace key <AC12> { [ backslash, bar       ] };
++
++    replace key <AB01> { [ semicolon, colon     ] };
++
++    replace key <AB11> { [ grave, asciitilde    ] };
++};

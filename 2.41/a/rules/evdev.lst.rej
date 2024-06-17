@@ -1,0 +1,10 @@
+--- rules/evdev.lst	2022-12-03 10:38:52.555572787 +0900
++++ rules/evdev.lst	2022-12-03 10:56:36.552084216 +0900
+@@ -779,6 +779,7 @@
+   phonetic        my: Malay (Jawi, phonetic)
+ 
+ ! option
++  mod:custom           My customization
+   grp                  Switching to another layout
+   grp:switch           Right Alt (while pressed)
+   grp:lswitch          Left Alt (while pressed)

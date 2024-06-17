@@ -1,0 +1,28 @@
+partial modifier_keys
+xkb_symbols "custom" {
+    replace key <MUHE> { [ Super_L ] };
+    modifier_map Mod4 { <MUHE> };
+
+    replace key <HENK> { [ Alt_R ] };
+    modifier_map Mod1 { <HENK> };
+
+    replace key <AE02> { [ 2, at                        ] };
+    replace key <AE06> { [ 6, asciicircum               ] };
+    replace key <AE07> { [ 7, ampersand                 ] };
+    replace key <AE08> { [ 8, asterisk                  ] };
+    replace key <AE09> { [ 9, parenleft                 ] };
+    replace key <AE10> { [ 0, parenright                ] };
+    replace key <AE11> { [ bracketleft, braceleft       ] };
+    replace key <AE12> { [ bracketright, braceright     ] };
+
+    replace key <AD01> { [ apostrophe, quotedbl ] };
+
+    replace key <AD12> { [ equal, plus          ] };
+
+    replace key <AC11> { [ minus, underscore    ] };
+    replace key <AC12> { [ backslash, bar       ] };
+
+    replace key <AB01> { [ semicolon, colon     ] };
+
+    replace key <AB11> { [ grave, asciitilde    ] };
+};
