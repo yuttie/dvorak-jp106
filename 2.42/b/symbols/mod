@@ -3,8 +3,8 @@ xkb_symbols "custom" {
     replace key <MUHE> { [ Super_L ] };
     modifier_map Mod4 { <MUHE> };
 
-    replace key <HENK> { [ Alt_R ] };
-    modifier_map Mod1 { <HENK> };
+    replace key <HKTG> { [ Alt_R ] };
+    modifier_map Mod1 { <HKTG> };
 
     replace key <AE02> { [ 2, at                        ] };
     replace key <AE06> { [ 6, asciicircum               ] };
@@ -25,4 +25,6 @@ xkb_symbols "custom" {
     replace key <AB01> { [ semicolon, colon     ] };
 
     replace key <AB11> { [ grave, asciitilde    ] };
+
+    replace key <HENK> { [ Zenkaku_Hankaku      ] };
 };
